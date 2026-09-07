@@ -25,12 +25,17 @@ review step afterwards.
   next line. Docstrings count as comments.
 - **Validation at trust boundaries** — schema-based, once, then trust the
   contract. No invented restrictions.
-- **Meaningful error handling** — no catch-and-rethrow, no silent fallbacks
-  hiding bugs.
+- **Meaningful error handling** — catch only errors with a realistic, nameable
+  cause; no catch-and-rethrow, no silent fallbacks hiding bugs, no error
+  infrastructure built ahead of need.
 - **SQL first** — filtering, sorting, joins, grouping, aggregation and
   pagination belong in the database, unless the SQL version is harder to read.
 - **No AI-style overengineering** — an explicit list of the constructs models
   add reflexively, and the rule that each must solve a concrete problem.
+
+Test strategy is deliberately out of scope — whether to write a test and what it
+covers is left to a dedicated testing or TDD skill, so the two can be combined
+without overlapping. Test code itself is still code and follows everything above.
 
 ## Installation
 

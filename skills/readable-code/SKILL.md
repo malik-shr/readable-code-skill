@@ -43,6 +43,13 @@ asked and say once, briefly, what concerns you. Do not repeat it, and do not
 build a compromise version that satisfies neither the instruction nor the
 guideline.
 
+## What this document does not decide
+
+Test strategy is out of scope here: whether something gets a test, what that
+test covers, and in which order code and test are written are decisions this
+document does not make. Test code is code, so everything below applies to it as
+well.
+
 ## Start with the existing codebase
 
 Before implementing anything, look at the surrounding code and at similar
@@ -312,6 +319,17 @@ validation failure, a not-found lookup, a declined payment — from unexpected
 programming or system errors. The first kind is control flow and belongs in the
 design; the second kind should generally be allowed to fail.
 
+Catch only errors you can name. A `try/catch` should exist because a specific
+thing realistically goes wrong there — the network times out, a unique
+constraint is violated, an external source returns something that is not valid
+JSON. Wrapping code that only throws when the program itself is wrong swallows
+exactly the bug you need to see.
+
+Do not build error infrastructure ahead of need. Custom error hierarchies,
+result wrappers, error codes, retry and backoff logic are answers to a caller
+that exists and needs them. Until then they are structure around a problem
+nobody has had yet.
+
 ## SQL first
 
 Prefer SQL for operations databases naturally handle well: filtering, sorting,
@@ -454,7 +472,8 @@ Before finishing, read the complete diff and ask:
 
 - Is this the simplest readable solution?
 - Did I introduce unnecessary abstractions?
-- Did I add defensive checks for impossible or unrealistic states?
+- Did I add defensive checks for impossible or unrealistic states, or catch an
+  error whose realistic cause I cannot name?
 - Did I invent requirements or edge cases?
 - Could some application-side data processing be expressed more naturally in SQL?
 - Are there comments that merely repeat the code?
