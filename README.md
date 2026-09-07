@@ -44,7 +44,7 @@ git clone https://github.com/malik-shr/readable-code-skill.git ~/.claude/skills/
 It then applies in every project. Update later with:
 
 ```
-git -C ~/.claude/skills/readable-code pull
+git -C ~/.claude/skills/readable-code-skill pull
 ```
 
 ### Single project only
@@ -54,7 +54,7 @@ that project and commit it:
 
 ```
 mkdir -p .claude/skills
-cp -r ~/.claude/skills/readable-code/skills/readable-code .claude/skills/
+cp -r ~/.claude/skills/readable-code/skills/readable-code-skill .claude/skills/
 ```
 
 Everyone who opens the project gets it, without installing anything.
