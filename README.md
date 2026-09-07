@@ -70,6 +70,6 @@ Everyone who opens the project gets it, without installing anything.
 .claude-plugin/
   plugin.json        plugin manifest
 skills/
-  readable-code/
+  readable-code-skill/
     SKILL.md         the philosophy itself
 ```

@@ -1,15 +1,10 @@
 {
-  "name": "readable-code",
+  "name": "readable-code-skill",
   "description": "Write readable, pragmatic, compact production code instead of over-abstracted, over-commented, over-defensive AI code. Readability-first decision making, sparse comments, pragmatic DRY, validation at trust boundaries, meaningful error handling, and SQL-first data access.",
   "version": "0.1.0",
   "author": {
     "name": "Malik",
     "email": "malik.sharkawy@volulink.de"
   },
-  "keywords": [
-    "code-quality",
-    "readability",
-    "clean-code",
-    "code-style"
-  ]
+  "keywords": ["code-quality", "readability", "clean-code", "code-style"]
 }
