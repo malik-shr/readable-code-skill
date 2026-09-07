@@ -38,7 +38,7 @@ Clone the repo into your personal skills directory. Claude Code auto-loads
 anything there on the next session — no marketplace, no install command.
 
 ```
-git clone https://github.com/YOUR-GITHUB-USER/readable-code-skill.git ~/.claude/skills/readable-code-skill
+git clone https://github.com/malik-shr/readable-code-skill.git ~/.claude/skills/readable-code-skill
 ```
 
 It then applies in every project. Update later with:
