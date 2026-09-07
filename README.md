@@ -59,7 +59,7 @@ that project and commit it:
 
 ```
 mkdir -p .claude/skills
-cp -r ~/.claude/skills/readable-code/skills/readable-code-skill .claude/skills/
+cp -r ~/.claude/skills/readable-code-skill/skills/readable-code-skill .claude/skills/
 ```
 
 Everyone who opens the project gets it, without installing anything.

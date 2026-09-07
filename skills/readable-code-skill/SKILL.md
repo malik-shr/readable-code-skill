@@ -1,5 +1,5 @@
 ---
-name: readable-code
+name: readable-code-skill
 description: Write readable, pragmatic, compact production code that feels like it was written by an experienced developer — not over-abstracted, over-commented, over-defensive AI code. Covers readability-first decision making, following the existing codebase, keeping diffs scoped, explicit-over-clever, pragmatic DRY and abstraction, flat control flow, sparse English comments, validation at trust boundaries, meaningful error handling, SQL-first data access, and a concrete list of AI-style overengineering to avoid. Use this skill whenever you are about to write, modify, extend, or refactor code in this project — including small edits, bug fixes, and single functions — not only when the user explicitly asks for "clean", "simple", or "readable" code. Read it before writing the first line, since almost all of it shapes decisions made while writing rather than afterwards.
 ---
 
