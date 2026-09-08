@@ -1,6 +1,6 @@
 ---
 name: readable-code-skill
-description: Write readable, pragmatic, compact production code that feels like it was written by an experienced developer — not over-abstracted, over-commented, over-defensive AI code. Covers readability-first decision making, following the existing codebase, keeping diffs scoped, explicit-over-clever, pragmatic DRY and abstraction, flat control flow, sparse English comments, validation at trust boundaries, meaningful error handling, SQL-first data access, and a concrete list of AI-style overengineering to avoid. Use this skill whenever you are about to write, modify, extend, or refactor code in this project — including small edits, bug fixes, and single functions — not only when the user explicitly asks for "clean", "simple", or "readable" code. Read it before writing the first line, since almost all of it shapes decisions made while writing rather than afterwards.
+description: Write readable, pragmatic, compact production code that feels like it was written by an experienced developer — not over-abstracted, over-commented, over-defensive AI code. Covers readability-first decision making, following the existing codebase, keeping diffs scoped, explicit-over-clever, pragmatic DRY and abstraction, class and OOP usage where it fits, flat control flow, sparse English comments, validation at trust boundaries, meaningful error handling, SQL-first data access, and a concrete list of AI-style overengineering to avoid. Use this skill whenever you are about to write, modify, extend, or refactor code in this project — including small edits, bug fixes, and single functions — not only when the user explicitly asks for "clean", "simple", or "readable" code. Read it before writing the first line, since almost all of it shapes decisions made while writing rather than afterwards.
 ---
 
 # Readable Code
@@ -179,6 +179,33 @@ six five-line functions each used once makes the pieces look tidy while the
 whole becomes unreadable, because understanding the operation now means
 reassembling it from fragments. A readable thirty-line function is often the
 better answer.
+
+## Classes and OOP
+
+Classes are welcome. When a piece of state and the operations on it belong
+together, a class is often the clearer choice than a set of free functions
+passing the same data between them — the reader finds the state, the rules that
+hold it together, and everything that may change it in one place.
+
+That is a preference, and it ranks below consistency with the existing
+codebase. In a project organized around modules of plain functions, keep
+writing plain functions; a parallel class-based structure means every reader now
+has to learn both. Where the surrounding code makes no statement — a new module,
+a new subsystem — organizing along objects is a good default, and in languages
+built around them, the idiomatic one.
+
+A class earns its place the same way every other construct does: it owns state,
+protects an invariant, or gives a domain concept an identity worth naming. A
+class with no state, with only static methods, or with a single method called
+from a single place is a function wearing ceremony — the `OrderSummaryMapper`
+further down is exactly that. Those are what the overengineering list means by
+wrapper classes; classes as such are not on it.
+
+Prefer flat structure over hierarchy: composition over inheritance, concrete
+classes over abstract base classes, and an interface once there is a second
+implementation or a boundary that genuinely gets swapped. Getters and setters
+that only forward a field add nothing the field does not already say, unless the
+language or the project expects them.
 
 ## Control flow
 

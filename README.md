@@ -20,6 +20,9 @@ review step afterwards.
 - **Compact without being clever** — minimum unnecessary code, not minimum
   line count.
 - **Pragmatic DRY** — small obvious duplication beats the wrong abstraction.
+- **Classes where they fit** — state plus the behavior on it may well be a
+  class; consistency with the codebase still wins, and a stateless
+  single-method class is just a function.
 - **Flat control flow** — guard clauses and early returns over deep nesting.
 - **Sparse comments** — English, short, explaining _why_, never narrating the
   next line. Docstrings count as comments.
